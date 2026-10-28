@@ -24,7 +24,14 @@ void inicializarTabla(char Tabla[size][size]){
         }
     }
 }
-
+void pedirVentas(int tabla[SIZE][SIZE]) {
+    for (int p = 0; p < SIZE; p++) {
+        for (int d = 0; d < SIZE; d++) {
+            printf("Ventas del producto %d en el dia %d: ", p + 1, d + 1);
+            scanf("%d", &tabla[p][d]);
+        }
+    }
+}
 void mostrarTabla(char Tabla[size][size]){
     printf("    ");
     for(int y = 0; y < size; y++){printf("%d ", y);}
@@ -40,10 +47,14 @@ void mostrarTabla(char Tabla[size][size]){
 
 
 int main(){
-    char Tabla[size][size];
-    inicializarTabla(Tabla);
-    printf("\n===== Tienda: regristo de ventas \n====");
+    int Tabla[size][size];
+    int totalGeneral = 0;
+    
+    
+    printf("===== Tienda: registro de ventas =====\n");
     scanf("%d", &ventas);
+
+    inicializarTabla(Tabla);
 
     printf("\n Ingrese el dia y el producto que quiera registar la venta(Dia de la venta: \n 0 = lunes , 1 = martes, 2 = miercole, 3 = jueves: \n=====)")
     scanf("%d %d", &dias, &productos);
