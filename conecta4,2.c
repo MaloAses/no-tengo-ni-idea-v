@@ -32,7 +32,7 @@ int ponerFicha(){
     int columna;
     
     if(jugador == 1){
-        printf("Jugador 1, ingrese la columna (0-6) para colocar su ficha: ");
+        printf("Shinji, ingrese la columna de (0-6) para colocar tu ficha: ");
         scanf("%d", &columna);
         // Validar la columna ingresada
         if(columna < 0 || columna >= tamanoTableroColumnas){
@@ -48,7 +48,7 @@ int ponerFicha(){
         }
         jugador = 2; // Cambiar al jugador 2 para la próxima vez
     } else {
-        printf("Jugador 2, ingrese la columna (0-6) para colocar su ficha: ");
+        printf(" Asuka, ingrese la columna de (0-6) para colocar tu ficha: ");
         scanf("%d", &columna);
         // Validar la columna ingresada
         if(columna < 0 || columna >= tamanoTableroColumnas){
@@ -139,12 +139,12 @@ int main(){
         int ganador = verificarGanador();
  
         if(ganador == 'X'){
-            printf("\n¡ Gano el jugador 1, felicidades shinji!\n");
+            printf("\n Felicidades Shinji, Ganaste!\n");
             break;
         }
  
         if(ganador == 'O'){
-            printf("\n¡Gano el jugador 2, felicidades asuka!\n");
+            printf("\n Felicidades Asuka, Ganaste!\n");
             break;
         }
  
