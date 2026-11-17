@@ -64,18 +64,3 @@ int main(){
 
 
 }
-    
-
-
-
-/*function setup() {
-  createCanvas(340, 480);
-}
-
-function draw() {
-  //background(200,100,100,100);
-  strokeWeight(10)
-  noFill ()
-  circle(mouseX,mouseY,30)
-  
-}*/
