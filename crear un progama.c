@@ -7,31 +7,55 @@
 //oqeu el usuario sea capas de elegir que persona quiere modificar a edad
 //por medio del puntero
 
-int main(){
-    int edad1 = 0;
-    int edad2 = 0;
-    int punteroEdad = &edad1
+int main() {
+    int edad1, edad2;   
+    int *p;             s
+    int opcion;
+    char seguir = 's';
 
+    printf("Ingresa la edad de la primera perso: ");
+    scanf("%d", &edad1);
 
-    int menu;
-        do 
-        printf("Menu de Edades\n");
-        printf("1. Edad de la pimera Persona\n");
-        printf("2. Edad de la segunda persona");
-        printf("3. Modificar las edades\n");
-        printf("4. Salir\n");
-        printf("Seleccione un menu: ");
-        scanf("%d", &menu);
+    p = &edad1;
+    printf("\n Modificando la edad de la persona 1 con el puntero.\n");
+    printf("Nueva edad: ");
+    scanf("%d", p);
+    printf("Edad de la perso 1 modificada: %d\n", edad1);
 
-        switch (menu){
-            case 1:
-            
-            printf("ingrese la edad de la primera popple");
-            scanf("%d, &edad1")
+    p = &edad2;
+    printf("\nIngresa la edad de la perso 2: ");
+    scanf("%d", p);
+
+    printf("Modificando la edad de la perso 2 con el puntero.\n");
+    printf("Nueva edad: ");
+    scanf("%d", p);
+    printf("Edad de la perso 2 modificada: %d\n", edad2);
+
+    while (seguir == 's' || seguir == 'S') {
+        printf("\n--- MENU ---\n");
+        printf("1. Modificar edad de la persona 1 (actual: %d)\n", edad1);
+        printf("2. Modificar edad de la persona 2 (actual: %d)\n", edad2);
+        printf("Elige persona: ");
+        scanf("%d", &opcion);
+
+        if (opcion == 1) {
+            p = &edad1;
+        } else if (opcion == 2) {
+            p = &edad2;
+        } else {
+            printf("Opcion invalida.\n");
+            continue;
         }
 
+        printf("Nueva edad: ");
+        scanf("%d", p);  
+        printf("Valor modificado: %d\n", *p);
 
+        printf("\n Edades actuales -> Persona 1: %d | Persona 2: %d\n", edad1, edad2);
+        printf("Modificar otra? (s/n): ");
+        scanf(" %c", &seguir);
+    }
 
-
+    printf("\n Edades finales -> Persona 1: %d | Persona 2: %d\n", edad1, edad2);
+    return 0;
 }
-
